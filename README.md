@@ -136,18 +136,20 @@ pnpm typegen
 This will generate `schema.json` file in the `/studio` folder and `sanity.types.ts` file in the `/frontend` folder.
 You need to run this command every time you make changes to the schema and queries. Or when you create a new document type. Otherwise, you will get type errors for frontend.
 
-## Updating all packages
+## Updating all packages from root folder
 
 ```bash
 pnpm update --latest --recursive
 ```
 
-## Environment variables
+## Installing new packages from root folder
 
 ```bash
 pnpm i -w frontend-package-name --filter ./frontend
 pnpm i -w studio-package-name --filter ./studio
 ```
+
+## Environment variables
 
 All environment variables and their descriptions:
 
