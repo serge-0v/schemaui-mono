@@ -108,7 +108,24 @@ Deploy your website to Vercel:
 5. Copy the environment variables from the `.env.local` file and paste them to your Vercel project settings. Vercel supports pasting all variables at once.
 6. Deploy
 
-Deploy the Sanity Studio to Vercel:
+Deploy the Sanity Studio to Sanity (preffered, if not deployed to Vercel):
+
+1. This method will deploy the Studio to Sanity using github actions;
+2. Deploy first time manually to get `SANITY_STUDIO_APP_ID`
+
+```bash
+sanity deploy
+```
+
+3. Go to github Settings -> Environments -> Production
+
+- `SANITY_STUDIO_PREVIEW_URL`, `SANITY_STUDIO_API_VERSION`, `SANITY_STUDIO_PROJECT_ID`, `SANITY_STUDIO_DATASET`, `SANITY_STUDIO_HOSTNAME`, `SANITY_STUDIO_APP_ID`
+
+4. Environment secrets -> Create and copy one on [Sanity Dashboard](https://www.sanity.io/manage) -> API -> API Tokens -> name Sanity Auth Token -> choose Deploy Studio (Token only)
+5. Copy it to github Settings -> Environments -> Production -> Environment secrets -> Create and paste it `SANITY_AUTH_TOKEN`
+6. Now when you push to github, the Studio will be deployed to Sanity using github actions.
+
+Deploy the Sanity Studio to Vercel (optional, if not deployed to Sanity):
 
 1. Create a [new Vercel project](https://vercel.com/new)
 2. Connect your GitHub repository and import the project. Make sure to set the root directory to `/studio`.
