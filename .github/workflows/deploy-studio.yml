@@ -47,6 +47,10 @@ jobs:
             echo "❌ SANITY_AUTH_TOKEN secret is not set"
             exit 1
           fi
+          if [ -z "${{ vars.SANITY_STUDIO_APP_ID }}" ]; then
+            echo "❌ SANITY_STUDIO_APP_ID environment variable is not set"
+            exit 1
+          fi
           echo "✅ All required variables and secrets are configured"
           
       - name: Deploy Sanity Studio
@@ -56,6 +60,7 @@ jobs:
           SANITY_STUDIO_PROJECT_ID: ${{ vars.SANITY_STUDIO_PROJECT_ID }}
           SANITY_STUDIO_DATASET: ${{ vars.SANITY_STUDIO_DATASET }}
           SANITY_STUDIO_HOSTNAME: ${{ vars.SANITY_STUDIO_HOSTNAME }}
+          SANITY_STUDIO_APP_ID: ${{ vars.SANITY_STUDIO_APP_ID }}
           SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
         run: |
           echo "🚀 Starting Sanity Studio deployment..."
