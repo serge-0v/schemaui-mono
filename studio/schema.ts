@@ -1,4 +1,3 @@
-import { type SchemaTypeDefinition } from "sanity";
 // documents
 import page from "./schemas/documents/page";
 import post from "./schemas/documents/post";
@@ -40,46 +39,44 @@ import faqs from "./schemas/blocks/faqs";
 import newsletter from "./schemas/blocks/forms/newsletter";
 import allPosts from "./schemas/blocks/all-posts";
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [
-    // documents
-    page,
-    post,
-    author,
-    category,
-    faq,
-    testimonial,
-    navigation,
-    settings,
-    // shared objects
-    blockContent,
-    link,
-    colorVariant,
-    buttonVariant,
-    sectionPadding,
-    // blocks
-    hero1,
-    hero2,
-    sectionHeader,
-    splitRow,
-    splitContent,
-    splitCardsList,
-    splitCard,
-    splitImage,
-    splitInfoList,
-    splitInfo,
-    gridCard,
-    pricingCard,
-    gridPost,
-    gridRow,
-    carousel1,
-    carousel2,
-    timelineRow,
-    timelinesOne,
-    cta1,
-    logoCloud1,
-    faqs,
-    newsletter,
-    allPosts,
-  ],
-};
+export const schemaTypes = [
+  // documents
+  page,
+  post,
+  author,
+  category,
+  faq,
+  testimonial,
+  navigation,
+  settings,
+  // shared objects
+  blockContent,
+  link,
+  colorVariant,
+  buttonVariant,
+  sectionPadding,
+  // blocks
+  hero1,
+  hero2,
+  sectionHeader,
+  splitRow,
+  splitContent,
+  splitCardsList,
+  splitCard,
+  splitImage,
+  splitInfoList,
+  splitInfo,
+  gridCard,
+  pricingCard,
+  gridPost,
+  gridRow,
+  carousel1,
+  carousel2,
+  timelineRow,
+  timelinesOne,
+  cta1,
+  logoCloud1,
+  faqs,
+  newsletter,
+  allPosts,
+];
